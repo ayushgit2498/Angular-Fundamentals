@@ -1,10 +1,16 @@
 import { Routes } from '@angular/router';
-import { EventDetailsComponent } from './app/events/event-details/event-details.component';
-import { EventsListComponent } from './app/events/events-list/events-list.comonent';
-import { CreateEventComponent } from './app/events/event-create/create-event.component';
+
+import {
+  EventsListComponent,
+  EventThumbnialComponent,
+  EventService,
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivator,
+  EventListResolver,
+} from './app/events/index';
+
 import { Error404Component } from './app/errors/404.component';
-import { EventRouteActivator } from './app/events/shared/event-route-activator.service';
-import { EventListResolver } from './app/events/shared/events-list-resolver.service';
 
 export const appRoutes: Routes = [
   {
