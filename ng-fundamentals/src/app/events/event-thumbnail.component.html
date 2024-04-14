@@ -1,12 +1,30 @@
-<div class="well hoverwell thumbnail">
-  <h1>Event Name: {{ event.name }}</h1>
+<div class="well hoverwell thumbnail event-thumbnail-component">
+  <h3>Event Name: {{ event.name }}</h3>
   <div>Date: {{ event.date }}</div>
-  <div>Time: {{ event.time }}</div>
-  <div>Price: \${{ event.price }}</div>
-  <div>
-    <span>Location: {{ event.location.address }}</span>
-    <span>&nbsp;</span>
-    <span>,{{ event.location.city }}, {{ event.location.country }}</span>
+  <div
+    [ngStyle]="getFontStyle()"
+    [ngClass]="getStartTimeClass()"
+    [ngSwitch]="event?.time"
+  >
+    Time: {{ event.time }} <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+    <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+    <span *ngSwitchDefault>(Normal Start)</span>
   </div>
-  <button class="btn btn-primary" (click)="handleClickMe()">Click Me</button>
+  <div>Price: ${{ event.price }}</div>
+  <div [hidden]="!event?.location">
+    <span>Location: {{ event.location?.address }}</span>
+    <span>&nbsp;</span>
+    <span class="pad-left"
+      >{{ event?.location?.city }}, {{ event?.location?.country }}</span
+    >
+  </div>
+  <!-- <div *ngIf="event?.onlineURL">OnlineURL: {{ event.onlineURL }}</div> -->
+  <div [hidden]="!event?.onlineURL">OnlineURL: {{ event.onlineURL }}</div>
+  <button
+    class="btn btn-primary"
+    (click)="handleClickMe()"
+    style="position: absolute; bottom: 10px"
+  >
+    Click Me
+  </button>
 </div>
