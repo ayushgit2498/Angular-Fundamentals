@@ -31,4 +31,9 @@ export const appRoutes: Routes = [
     redirectTo: '/events',
     pathMatch: 'full',
   },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./app/users/user.module').then((m) => m.UserModule),
+  },
 ];
