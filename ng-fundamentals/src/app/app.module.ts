@@ -18,9 +18,11 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
+  DurationPipe,
 } from './events/index';
 import { AuthService } from './users/services/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CollapsibleComponent } from './common/collapsable-well.component';
 
 @NgModule({
   imports: [
@@ -39,6 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
+    CollapsibleComponent,
+    DurationPipe,
   ],
   bootstrap: [EventsAppComponent],
   providers: [

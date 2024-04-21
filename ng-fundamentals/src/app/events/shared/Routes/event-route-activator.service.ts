@@ -7,7 +7,7 @@ import {
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { EventService } from './event.service';
+import { EventService } from '../Services/event.service';
 
 @Injectable()
 export class EventRouteActivator implements CanActivate {

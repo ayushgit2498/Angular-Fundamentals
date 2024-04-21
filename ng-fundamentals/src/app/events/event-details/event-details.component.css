@@ -5,3 +5,7 @@
 .event-image {
   height: 100px;
 }
+
+.filterButtons button:not(:last-child) {
+  margin-right: 2px;
+}

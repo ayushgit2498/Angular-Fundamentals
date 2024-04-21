@@ -4,7 +4,7 @@ import {
   Resolve,
   RouterStateSnapshot,
 } from '@angular/router';
-import { EventService } from './event.service';
+import { EventService } from '../Services/event.service';
 import { map } from 'rxjs/operators';
 
 @Injectable()
